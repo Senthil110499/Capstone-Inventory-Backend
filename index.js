@@ -24,6 +24,11 @@ app.use("/api/inventory", inventoryRouter)
 app.use("/api/order", isAuthenticated, orderRouter)
 app.use("/api/bill", isAuthenticated, billRouter)
 
+app.get('/', (req, res) => {
+    res.status(200).send(`<div style="text-align: center; background-color:purple;  padding: 10px;"><h1> Inventory Billing App</h1></div>`)
+});
+
+
 app.listen(port, () => {
     console.log("App is listening with port",port);
 })
